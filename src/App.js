@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/header';
 
 function App() {
   return (
-    <header>praveen</header>
+    <div>
+      <Header></Header>
+    </div>
   );
 }
 
