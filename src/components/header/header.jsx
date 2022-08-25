@@ -5,6 +5,7 @@ import resizericon from './../../assets/images/header/resizer-icon.png'
 import texticon from './../../assets/images/header/text.png'
 import govlog from './../../assets/images/header/gov-logo-1.png'
 import english from './../../assets/images/header/English.svg'
+import { SITE_LANGUAGE,SITE_MENU } from '../../utils/Constants';
 
 function Header() {
   return (
@@ -30,42 +31,11 @@ function Header() {
                    <div class="mod-languages">
                       <form name="lang" method="post" action="https://bhashini.gov.in/en/">
                          <select class="inputbox advancedSelect" onchange="document.location.replace(this.value);">
-                            <option dir="ltr" value="/en/" selected="selected">
-                               English
-                            </option>
-                            <option dir="ltr" value="/as/">
-                               অসমীয়া
-                            </option>
-                            <option dir="ltr" value="/bn/">
-                               বাংলা
-                            </option>
-                            <option dir="ltr" value="/gu/">
-                               ગુજરાતી
-                            </option>
-                            <option dir="ltr" value="/hi/">
-                               हिन्दी
-                            </option>
-                            <option dir="ltr" value="/kn/">
-                               ಕನ್ನಡ
-                            </option>
-                            <option dir="ltr" value="/ml/">
-                               മലയാളം
-                            </option>
-                            <option dir="ltr" value="/mr/">
-                               मराठी
-                            </option>
-                            <option dir="ltr" value="/od/">
-                               ଓଡ଼ିଆ
-                            </option>
-                            <option dir="ltr" value="/pa/">
-                               ਪੰਜਾਬੀ
-                            </option>
-                            <option dir="ltr" value="/ta/">
-                               தமிழ்
-                            </option>
-                            <option dir="ltr" value="/te/">
-                               తెలుగు
-                            </option>
+                            {
+                              SITE_LANGUAGE.map(item=><option dir="ltr" value="/en/" selected="selected">
+                              {item}
+                           </option>)
+                            }
                          </select>
                       </form>
                    </div>
@@ -98,10 +68,9 @@ function Header() {
           <div class="container text-black relative">
              <div id="wpu-pages-menu">
                 <ul class="nav menu nav nav-pills mod-list">
-                   <li class="item-124 default current active"><a href="/en/">Home</a></li>
-                   <li class="item-104"><a href="/en/about">About Bhashini</a></li>
-                   <li class="item-105"><a href="/en/ecosystem">Ecosystem</a></li>
-                   <li class="item-260"><a href="https://bhashini.gov.in/ulca">ULCA</a></li>
+                  {
+                    SITE_MENU.map(menu=> <li class="item-124 default current active"><a href="/en/">{menu}</a></li>)
+                  }
                 </ul>
              </div>
              <a href="javascript:;" class="hamburger-menu js-menu">
