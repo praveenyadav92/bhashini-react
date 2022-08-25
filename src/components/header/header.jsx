@@ -1,84 +1,123 @@
 
 import './header.css';
+import laptopicon from './../../assets/images/header/laptop.png'
+import resizericon from './../../assets/images/header/resizer-icon.png'
+import texticon from './../../assets/images/header/text.png'
+import govlog from './../../assets/images/header/gov-logo-1.png'
+import english from './../../assets/images/header/English.svg'
 
 function Header() {
   return (
-    <div>
-      <header>
-        <nav className='navbar navbar-default'>
-          <div className='text-right bb-grey py-5 font-300'>
-            <div className='container text-black small-font'>
-              <div className='px-5 d-inline'>
-                <div className='text-black d-inline-block'>
-                  <div>
-                    <div className='custom pt-5'>
-                      <ul className='d-flex list-unstyled mb-0'>
-                        <li>
-                          <img src={require('./../../assets/images/header/laptop.png')} />
-                          <a>Skip to main content</a>
-                        </li>
-                        <li><a><img src={require('./../../assets/images/header/resizer-icon.png')} />&nbsp;+A</a>&nbsp;<a>A</a>&nbsp;<a>-A</a></li>
-                        <li>
-                          <a><img src={require('./../../assets/images/header/text.png')} />Screen Reader</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+    <header>
+    <nav class="navbar navbar-default">
+       <div class="text-right bb-gray py-5 font-300">
+          <div class="container text-black small-font">
+             <div class="px-5 d-inline">
+                <div class="text-black d-inline-block">
+                   <div id="pages-toplinks">
+                      <div class="custom pt-5">
+                         <ul class="d-flex list-unstyled mb-0">
+                            <li class="hidden-xs"><img src={laptopicon} alt="skip to main content" class="pr-5 valign-unset hidden-xs ls-is-cached lazyloaded lazycached" /><a href="#main-content">Skip to main content</a></li>
+                            <li class="font-resizer"><a id="large" href="#"><img src={resizericon} alt="font-resizer" class="pr-5 pl-15 valign-unset hidden-xs ls-is-cached lazyloaded lazycached"/>&nbsp;+A</a>&nbsp;<a id="medium" class="selected" href="#">A</a>&nbsp;<a id="small" href="#">-A</a></li>
+                            <li><a href="screen-reader"><img src={texticon} alt="Screen Reader" class="pr-10 pl-15 valign-unset hidden-xs ls-is-cached lazyloaded lazycached"/>Screen Reader</a></li>
+                         </ul>
+                      </div>
+                   </div>
                 </div>
-              </div>
-
-              <div>
-                <div>
-                  <div>
-                    <form name="lang" method="post" action="https://www.bhashini.gov.in/en/">
-                      <select>
-                        <option>English</option>
-                        <option>অসমীয়া</option>
-                        <option>বাংলা</option>
-                        <option>ગુજરાતી</option>
-                        <option>हिन्दी</option>
-                        <option>ಕನ್ನಡ</option>
-                        <option>മലയാളം</option>
-                        <option>मराठी</option>
-                        <option>ଓଡ଼ିଆ</option>
-                        <option>ਪੰਜਾਬੀ</option>
-                        <option>தமிழ்</option>
-                        <option>తెలుగు</option>
-                      </select>
-                    </form>
-                  </div>
+             </div>
+             <div class="px-5 d-inline-block">
+                <div id="wpu-pages-menu">
+                   <div class="mod-languages">
+                      <form name="lang" method="post" action="https://bhashini.gov.in/en/">
+                         <select class="inputbox advancedSelect" onchange="document.location.replace(this.value);">
+                            <option dir="ltr" value="/en/" selected="selected">
+                               English
+                            </option>
+                            <option dir="ltr" value="/as/">
+                               অসমীয়া
+                            </option>
+                            <option dir="ltr" value="/bn/">
+                               বাংলা
+                            </option>
+                            <option dir="ltr" value="/gu/">
+                               ગુજરાતી
+                            </option>
+                            <option dir="ltr" value="/hi/">
+                               हिन्दी
+                            </option>
+                            <option dir="ltr" value="/kn/">
+                               ಕನ್ನಡ
+                            </option>
+                            <option dir="ltr" value="/ml/">
+                               മലയാളം
+                            </option>
+                            <option dir="ltr" value="/mr/">
+                               मराठी
+                            </option>
+                            <option dir="ltr" value="/od/">
+                               ଓଡ଼ିଆ
+                            </option>
+                            <option dir="ltr" value="/pa/">
+                               ਪੰਜਾਬੀ
+                            </option>
+                            <option dir="ltr" value="/ta/">
+                               தமிழ்
+                            </option>
+                            <option dir="ltr" value="/te/">
+                               తెలుగు
+                            </option>
+                         </select>
+                      </form>
+                   </div>
                 </div>
-              </div>
-
-            </div>
-
+             </div>
           </div>
-
-          <div>
-            <div>
-              <div>
-                <div>
-
-                  <div>
-                    <div><img src={require('../../assets/images/header/gov-logo-1.png')} />
-
-                    </div>
-                  </div>
-                  <div>
-                    <div><img src={require('../../assets/images/header/English.svg')} />
-
-                    </div>
-                  </div>
-
+       </div>
+       <div class="container text-black py-10 logo-cover">
+          <div class="row">
+             <div class="col-sm-7 px-xs-0">
+                <div class="d-flex">
+                   <div class="custom">
+                      <div class="hidden-xs-down"><img src={govlog} class="ls-is-cached lazyloaded lazycached"/></div>
+                      <div class="show-xs-down mobile-logos">
+                         <div class="d-flex"></div>
+                      </div>
+                   </div>
                 </div>
-              </div>
-            </div>
+             </div>
+             <div class="col-sm-5 text-right pl-30 hidden-xs-down">
+                <div class="custom bhashini-logo hidden-xs-down">
+                   <div><img src={english} style={{"height":"70px", "margin-top":"-10px", "margin-bottom":"-10px"}} /></div>
+                </div>
+             </div>
           </div>
-
-
-        </nav>
-      </header>
-    </div>
+          <div class="navbar-header bg-gray-shade-1">
+          </div>
+       </div>
+       <div class="navbar-collapse main-menu px-xs-0 js-mainMenuOpen" id="bs-example-navbar-collapse-1">
+          <div class="container text-black relative">
+             <div id="wpu-pages-menu">
+                <ul class="nav menu nav nav-pills mod-list">
+                   <li class="item-124 default current active"><a href="/en/">Home</a></li>
+                   <li class="item-104"><a href="/en/about">About Bhashini</a></li>
+                   <li class="item-105"><a href="/en/ecosystem">Ecosystem</a></li>
+                   <li class="item-260"><a href="https://bhashini.gov.in/ulca">ULCA</a></li>
+                </ul>
+             </div>
+             <a href="javascript:;" class="hamburger-menu js-menu">
+             <span class="hamburger-item"></span>
+             <span class="hamburger-item"></span>
+             <span class="hamburger-item"></span>
+             </a>
+             <div class="pull-right pl-30 pages-bhashadaan-btn">
+                <div class="custom">
+                   <div class="mt-10"><a class="bh-btn-primary text-white font-600" href="https://bhashini.gov.in/bhashadaan" target="_blank" rel="noopener noreferrer"> Join Bhasha<span class="yellow">&nbsp;Daan</span> </a></div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </nav>
+ </header>
   );
 }
 
